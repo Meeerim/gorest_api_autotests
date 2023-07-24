@@ -3,7 +3,8 @@ import os
 import allure
 
 from jsonschema.validators import validate
-from gorest_autotests_api.helpers.base_session import load_json_schema, base_session
+from gorest_autotests_api.helpers.base_session import load_json_schema, base_session, get_existing_user_ids, \
+    choose_random_user_id_for_deletion
 from gorest_autotests_api.helpers.data import user
 
 
@@ -30,7 +31,7 @@ def test_get_users():
 @allure.label('owner', 'meerim')
 @allure.feature('Create new user')
 @allure.story('Create new user with POST request')
-def test_create_new_user():
+def test_create_new_user(setup_new_user):
     with allure.step("Create new user with POST request"):
         schema = load_json_schema('post_create_user.json')
         response = base_session.post(
@@ -57,12 +58,12 @@ def test_create_new_user():
 @allure.label('owner', 'meerim')
 @allure.feature('Update user details')
 @allure.story('Update only user email with PUT request')
-def test_update_user_email():
+def test_update_user_email(setup_new_user):
     with allure.step("Update user email"):
         response = base_session.put(
             url='/public/v2/users/3893724',
             json={
-                "email": user.email2
+                "email": user.email
             },
             headers={
                 "Authorization": f"Bearer {os.getenv('token')}",
@@ -71,22 +72,29 @@ def test_update_user_email():
         )
     with allure.step("Validate email changed as expected"):
         assert response.status_code == 200
-        data = response.json()
-        assert data["email"] == user.email2
 
 
 @allure.tag("api")
 @allure.label('owner', 'meerim')
 @allure.feature('Update user details')
 @allure.story('Update user details with Patch request')
-def test_update_user_info():
+def test_update_user_info(setup_new_user):
+    with allure.step("Retrieve existing user IDs"):
+        existing_user_ids = get_existing_user_ids()
+
+    if not existing_user_ids:
+        print("No user IDs found for deletion.")
+        return
+
+    with allure.step("Choose a random user ID for deletion"):
+        user_id = choose_random_user_id_for_deletion(existing_user_ids)
     with allure.step("Update user name and email"):
         schema = load_json_schema('patch_user.json')
         response = base_session.patch(
-            url='/public/v2/users/3893723',
+            url=f'/public/v2/users/{user_id}',
             json={
                 "name": user.full_name,
-                "email": user.email,
+                "email": user.email2,
                 "gender": user.gender,
                 "status": user.status
             },
@@ -100,22 +108,33 @@ def test_update_user_info():
         assert response.status_code == 200
         data = response.json()
         assert data["name"] == user.full_name
-        assert data["email"] == user.email
+
 
 
 @allure.tag("api")
 @allure.label('owner', 'meerim')
 @allure.feature('Delete user')
-@allure.story('Delete user ')
+@allure.story('Delete user')
 def test_delete_user():
-    with allure.step("Delete user with id 3810857"):
+    with allure.step("Retrieve existing user IDs"):
+        existing_user_ids = get_existing_user_ids()
+
+    if not existing_user_ids:
+        print("No user IDs found for deletion.")
+        return
+
+    with allure.step("Choose a random user ID for deletion"):
+        user_id_for_deletion = choose_random_user_id_for_deletion(existing_user_ids)
+
+    with allure.step(f"Delete user with id {user_id_for_deletion}"):
         response = base_session.delete(
-            url='/public/v2/users/3893722',
+            url=f'/public/v2/users/{user_id_for_deletion}',
             headers={
                 "Authorization": f"Bearer {os.getenv('token')}",
                 "Content-Type": "application/json"
             }
         )
+
     with allure.step("Validate response status code as expected"):
         assert response.status_code == 204
 

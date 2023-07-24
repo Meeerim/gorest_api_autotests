@@ -1,6 +1,7 @@
 import json
 import logging
 import os.path
+import random
 
 import allure
 import curlify
@@ -42,3 +43,21 @@ class CustomSession(Session):
 
 
 base_session = CustomSession('https://gorest.co.in')
+
+
+def get_existing_user_ids():
+    response = base_session.get(url='/public/v2/users/')
+    if response.status_code == 200:
+        user_data = response.json()
+        print(user_data)
+        user_ids = {user['id'] for user in user_data}
+        return user_ids
+    else:
+        # Handle the scenario where the GET request failed
+        print(f"Failed to retrieve user IDs. Status code: {response.status_code}")
+        return []
+
+
+def choose_random_user_id_for_deletion(existing_user_ids):
+    user_ids_list = list(existing_user_ids)
+    return random.choice(user_ids_list)
