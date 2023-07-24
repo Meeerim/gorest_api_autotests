@@ -1,0 +1,72 @@
+[
+  {
+    "id": 3893725,
+    "name": "Mary Sk ",
+    "email": "murphykristina@example.org",
+    "gender": "female",
+    "status": "active"
+  },
+  {
+    "id": 3893724,
+    "name": "Aanand Nambeesan",
+    "email": "mosesalexander@example.org",
+    "gender": "male",
+    "status": "active"
+  },
+  {
+    "id": 3897405,
+    "name": "Mary Sk ",
+    "email": "fernandezmaxwell@example.com",
+    "gender": "female",
+    "status": "active"
+  },
+  {
+    "id": 3893721,
+    "name": "Mary Sk ",
+    "email": "michael38@example.net",
+    "gender": "female",
+    "status": "active"
+  },
+  {
+    "id": 3896887,
+    "name": "Mary Sk ",
+    "email": "alexandriabowman@example.net",
+    "gender": "female",
+    "status": "active"
+  },
+  {
+    "id": 3895560,
+    "name": "Mary Sk ",
+    "email": "test_first@gmail.com",
+    "gender": "female",
+    "status": "active"
+  },
+  {
+    "id": 3893730,
+    "name": "Dr. Priya Butt",
+    "email": "butt_dr_priya@gerlach.test",
+    "gender": "female",
+    "status": "active"
+  },
+  {
+    "id": 3893729,
+    "name": "Gopee Kaul",
+    "email": "gopee_kaul@streich.test",
+    "gender": "female",
+    "status": "inactive"
+  },
+  {
+    "id": 3893728,
+    "name": "Bhilangana Kaniyar",
+    "email": "kaniyar_bhilangana@bogisich.test",
+    "gender": "female",
+    "status": "inactive"
+  },
+  {
+    "id": 3893723,
+    "name": "Karthik Guneta",
+    "email": "guneta_karthik@bauch.example",
+    "gender": "male",
+    "status": "inactive"
+  }
+]
