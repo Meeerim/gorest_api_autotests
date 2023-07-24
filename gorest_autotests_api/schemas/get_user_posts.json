@@ -1,0 +1,27 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "id",
+            "user_id",
+            "title",
+            "body"
+        ],
+        "properties": {
+            "id": {
+                "type": "integer"
+            },
+            "user_id": {
+                "type": "integer"
+            },
+            "title": {
+                "type": "string"
+            },
+            "body": {
+                "type": "string"
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "gorest-autotests-api"
+version = "0.1.0"
+description = ""
+authors = ["Meerim Sabytkyzy <skmeerim1999@gmail.com>"]
+readme = "README.md"
+packages = [{include = "gorest_autotests_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.28.2"
+pytest = "^7.2.2"
+allure-pytest = "^2.13.1"
+python-dotenv = "^1.0.0"
+curlify = "^2.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

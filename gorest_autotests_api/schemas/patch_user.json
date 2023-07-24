@@ -1,0 +1,24 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "required": [
+        "name",
+        "email",
+        "gender",
+        "status"
+    ],
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "email": {
+            "type": "string"
+        },
+        "gender": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string"
+        }
+    }
+}
