@@ -57,24 +57,17 @@
 <!-- Allure TestOps -->
 
 ### <img width="3%" title="Allure TestOps" src="images/allure_testops.png"> Allure TestOps Integration
-### [Dashboard](https://allure.autotests.cloud/project/2086/dashboards)
+### [Dashboard](https://allure.autotests.cloud/project/3560/dashboards)
 ##### Results are uploaded there and the automated test-cases can be automatically updated accordingly to the recent changes in the code.
-![This is an image](notion_autotest_api/resources/images/screenshots/allure_testops_dashboard.png)
+![This is an image](images/screenshots/allure_testops_dashboard.png)
 
+Allure TestOps allows you to run automated tests and see the result of their execution. 
+In this case, you can choose exactly what tests to run. 
+They also include all members of the council who can use tests for their own needs.
 Test-cases in the project are imported and constantly updated from the code,
-so there is no need in complex process of synchronization manual test-cases and autotests.\
-It is enough to create and update an autotest in the code and the test-case in TMS always will be in actual state.\
-Manual test-cases also can be added in TMS in case of need(via web interface or via code).
+so there is no need in complex process of synchronization manual test-cases and autotests.
 
-![This is an image](notion_autotest_api/resources/images/screenshots/allure_testops_suites.png)
-
-
-<!-- Jira -->
-
-### <img width="3%" title="Jira" src="images/jira.png"> Jira integration
-##### After configuration TestOps we can integrate results launches in Jira
-
-![This is an image](images/screenshots/jira.png)
+![This is an image](images/screenshots/test_suites.png)
 
 
 <!-- Telegram -->
