@@ -11,8 +11,8 @@ from requests import Session, Response
 
 
 def load_json_schema(name: str):
-    schema_abs_path = r'C:\Users\skmee\PycharmProjects\gorest_autotests_api\gorest_autotests_api\schemas'
-    schema_path = os.path.join(schema_abs_path, name)
+    root_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    schema_path = os.path.join(root_directory, 'schemas', name)
     with open(schema_path) as schema:
         return json.loads(schema.read())
 

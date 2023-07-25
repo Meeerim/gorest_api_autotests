@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jul 24 23:42:50 GST 2023","Mon Jul 24 23:42:51 GST 2023","332","tests","test_user_page","","","","test_update_user_email",""
+"passed","Mon Jul 24 23:42:52 GST 2023","Mon Jul 24 23:42:52 GST 2023","318","tests","test_user_page","","","","test_user_posts",""
+"passed","Mon Jul 24 23:42:49 GST 2023","Mon Jul 24 23:42:50 GST 2023","1116","tests","test_user_page","","","","test_get_users",""
+"passed","Mon Jul 24 23:42:51 GST 2023","Mon Jul 24 23:42:52 GST 2023","627","tests","test_user_page","","","","test_delete_user",""
+"passed","Mon Jul 24 23:42:51 GST 2023","Mon Jul 24 23:42:51 GST 2023","644","tests","test_user_page","","","","test_update_user_info",""
+"passed","Mon Jul 24 23:42:50 GST 2023","Mon Jul 24 23:42:50 GST 2023","343","tests","test_user_page","","","","test_create_new_user",""

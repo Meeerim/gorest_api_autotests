@@ -1,0 +1,7 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"","Update user details","Update only user email with PUT request","0","0","1","0","0"
+"","Retrieves user posts","Verify that the API returns the posts for the specified user (ID 2241)","0","0","1","0","0"
+"","Get users details","Get all users and details ","0","0","1","0","0"
+"","Delete user","Delete user","0","0","1","0","0"
+"","Update user details","Update user details with Patch request","0","0","1","0","0"
+"","Create new user","Create new user with POST request","0","0","1","0","0"
