@@ -59,9 +59,18 @@ def test_create_new_user(setup_new_user):
 @allure.feature('Update user details')
 @allure.story('Update only user email with PUT request')
 def test_update_user_email(setup_new_user):
+    with allure.step("Retrieve existing user IDs"):
+        existing_user_ids = get_existing_user_ids()
+
+    if not existing_user_ids:
+        print("No user IDs found for deletion.")
+        return
+
+    with allure.step("Choose a random user ID for deletion"):
+        user_id = choose_random_user_id_for_deletion(existing_user_ids)
     with allure.step("Update user email"):
         response = base_session.put(
-            url='/public/v2/users/3893724',
+            url=f'/public/v2/users/{user_id}',
             json={
                 "email": user.email
             },
