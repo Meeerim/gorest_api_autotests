@@ -1,1 +1,0 @@
-curl -X PUT -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Authorization: Bearer b7ef8a19897ee7829de3f0dc2711db63b5801feca68bc0b2beab6abad5e56fb8' -H 'Connection: keep-alive' -H 'Content-Length: 38' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.28.1' -d '{"email": "waltonallison@example.com"}' https://gorest.co.in/public/v2/users/3893724
